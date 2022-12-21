@@ -1,3 +1,72 @@
+import $ from 'jquery'
+
+$(function(){
+  let windowW = $(window).width();
+  if(windowW > 1160){
+    nav()
+  }
+  else if(windowW < 1159 && windowW >= 980){
+    nav()
+  }
+  else if(windowW < 979 && windowW >= 580){
+  
+    tNav()
+  }
+  else if(windowW < 579){
+    tNav()
+  }
+  // 공통
+
+  // reset
+})
+// web nav
+function nav(){
+  $('nav li>a').on('click',function(){
+    const navA = $(this).attr('href');
+    const navB = $(navA).offset().top;
+    const headerHeight = $('header').innerHeight();
+    $('html,body').animate({scrollTop : navB - headerHeight},800)
+    return false;
+  })
+}
+// table, moble nav
+function tNav(){
+  let navW = $('nav').width();
+
+  // .btn click
+  $('header .btn').on('click',function(e){
+    $(this).hide();
+    $('nav').animate({left:0},400)
+  })
+  // scrool
+  $('nav li>a').on('click',function(){
+    const navA = $(this).attr('href');
+    const navB = $(navA).offset().top;
+    const headerHeight = $('header').innerHeight();
+    $('html,body').animate({scrollTop : navB - headerHeight},800)
+    $('nav').css('left','-'+navW+'px');
+    $(this).show();
+    return false;
+  })
+
+  // close
+  $('nav .close').on('click',function(e){
+    $('nav').css('left','-'+navW+'px')
+  })
+}
+
+function submenu(){
+  // html 연결
+  // jquery 
+}
+
+
+
+
+
+
+
+
 // Dom object > 데이터 정리
 const h4 = document.querySelector('#modal h4');
 const img = document.querySelector('#modal figure>img');

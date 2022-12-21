@@ -65,7 +65,14 @@ nav>ul>li>a{
   color: #fff;
 }
 nav .colse{
-  display: none;
+  /* display: none; */
+  /* position: absolute;
+  top: 15px;
+  right: 40px;
+  width: 40px; height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
 }
 /* btn */
 header>p.btn{
@@ -73,10 +80,10 @@ header>p.btn{
   top: 15px;
   right: 40px;
   width: 40px; height: 40px;
-  /* display: flex; */
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
-  display: none;
+  /* display: none; */
 }
 header>p.btn>span{
   display: block;
